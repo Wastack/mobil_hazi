@@ -2,6 +2,6 @@ package bme.moblab.weatheranal.ui.main
 
 import bme.moblab.weatheranal.ui.Presenter
 
-class AppendPresenter : Presenter<AppendScreen>() {
+class MainPresenter : Presenter<AppendScreen>() {
     // TODO implement
 }

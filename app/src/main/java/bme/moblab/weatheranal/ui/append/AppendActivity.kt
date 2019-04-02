@@ -9,7 +9,7 @@ import bme.moblab.weatheranal.R
 
 import kotlinx.android.synthetic.main.activity_main.*
 
-class AnalyseActivity : AppCompatActivity() {
+class AppendActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,5 +1,5 @@
 package bme.moblab.weatheranal.ui.main
 
-class AnalyseScreen {
+class MainScreen {
     // TODO implement
 }
