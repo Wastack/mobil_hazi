@@ -1,7 +1,9 @@
 package bme.moblab.weatheranal.ui
 
 import android.content.Context
+import bme.moblab.weatheranal.ui.main.AnalysePresenter
 import bme.moblab.weatheranal.ui.main.AppendPresenter
+import bme.moblab.weatheranal.ui.main.MainPresenter
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -14,7 +16,13 @@ class UIModule(private  val context: Context) {
 
     @Provides
     @Singleton
-    fun mainPresenter() = AppendPresenter()
+    fun mainPresenter() = MainPresenter()
 
+    @Provides
+    @Singleton
+    fun appendPresenter() = AppendPresenter()
 
+    @Provides
+    @Singleton
+    fun analysePresenter() = AnalysePresenter()
 }
