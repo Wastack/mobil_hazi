@@ -1,25 +1,32 @@
-package bme.moblab.weatheranal.ui.main
+package bme.moblab.weatheranal.ui.analyse
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import bme.moblab.weatheranal.R
+import bme.moblab.weatheranal.model.StoredWeather
+import javax.inject.Inject
 
-import kotlinx.android.synthetic.main.activity_main.*
+class AnalyseActivity : AppCompatActivity(), AnalyseScreen {
+    override fun updateDiagram(w: List<StoredWeather>) {
+        TODO("not implemented")
+    }
 
-class AnalyseActivity : AppCompatActivity() {
+    @Inject
+    lateinit var analysePresenter: AnalysePresenter
 
+    override fun onStart() {
+        super.onStart()
+        analysePresenter.attachScreen(this)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        analysePresenter.detachScreen()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
-
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

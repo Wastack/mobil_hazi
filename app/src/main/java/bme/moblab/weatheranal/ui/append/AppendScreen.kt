@@ -1,5 +1,5 @@
-package bme.moblab.weatheranal.ui.main
+package bme.moblab.weatheranal.ui.append
 
-class AppendScreen {
+interface AppendScreen {
     // TODO implement
 }

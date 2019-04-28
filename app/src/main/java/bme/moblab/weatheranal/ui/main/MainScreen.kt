@@ -1,5 +1,8 @@
 package bme.moblab.weatheranal.ui.main
 
-class MainScreen {
-    // TODO implement
+import bme.moblab.weatheranal.model.StoredWeather
+import bme.moblab.weatheranal.ui.Screen
+
+interface MainScreen: Screen {
+    fun showWeatherData(data : List<StoredWeather>)
 }

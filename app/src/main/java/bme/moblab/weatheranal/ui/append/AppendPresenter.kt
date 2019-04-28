@@ -1,4 +1,4 @@
-package bme.moblab.weatheranal.ui.main
+package bme.moblab.weatheranal.ui.append
 
 import bme.moblab.weatheranal.ui.Presenter
 

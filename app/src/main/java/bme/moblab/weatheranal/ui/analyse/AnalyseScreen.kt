@@ -1,5 +1,7 @@
-package bme.moblab.weatheranal.ui.main
+package bme.moblab.weatheranal.ui.analyse
 
-class AnalyseScreen {
-    // TODO implement
+import bme.moblab.weatheranal.model.StoredWeather
+
+interface AnalyseScreen {
+    fun updateDiagram(w: List<StoredWeather>)
 }

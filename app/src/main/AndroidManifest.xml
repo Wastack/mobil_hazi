@@ -3,6 +3,7 @@
           xmlns:tools="http://schemas.android.com/tools" package="bme.moblab.weatheranal">
 
     <application
+            android:name=".WheaterApplication"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
@@ -20,12 +21,12 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".ui.main.AppendActivity"
+                android:name=".ui.append.AppendActivity"
                 android:label="WheatherAnal"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-                android:name=".ui.main.AnalyseActivity"
+                android:name=".ui.analyse.AnalyseActivity"
                 android:label="WheatherAnal"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>

@@ -1,25 +1,30 @@
-package bme.moblab.weatheranal.ui.main
+package bme.moblab.weatheranal.ui.append
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import bme.moblab.weatheranal.R
 
-import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Inject
 
-class AppendActivity : AppCompatActivity() {
+class AppendActivity : AppCompatActivity(), AppendScreen {
+
+    @Inject
+    lateinit var appendPresenter: AppendPresenter
+
+    override fun onStart() {
+        super.onStart()
+        appendPresenter.attachScreen(this)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        appendPresenter.detachScreen()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
-
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
