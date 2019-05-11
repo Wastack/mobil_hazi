@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import bme.moblab.weatheranal.R
+import bme.moblab.weatheranal.injector
 import bme.moblab.weatheranal.model.StoredWeather
 import javax.inject.Inject
 
@@ -25,9 +26,12 @@ class AnalyseActivity : AppCompatActivity(), AnalyseScreen {
         super.onStop()
         analysePresenter.detachScreen()
     }
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_analyse)
+        injector.inject(this)
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

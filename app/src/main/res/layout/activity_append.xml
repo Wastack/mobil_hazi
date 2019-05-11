@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.AppBarOverlay">
+            <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="Weather App" android:textSize="27dp"/>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+    <TextView
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="cursive"
+            android:textSize="30dp"
+            android:text="Temperature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <EditText
+            android:text="27.32"
+            android:id="@+id/temp_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <requestFocus />
+    </EditText>
+    <TextView
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="cursive"
+            android:textSize="30dp"
+            android:text="Date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <EditText
+            android:text="11/05/2019"
+            android:id="@+id/date_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <requestFocus />
+    </EditText>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/append_unique_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@android:drawable/ic_input_add"/>
+</LinearLayout>

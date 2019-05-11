@@ -9,9 +9,14 @@ import javax.inject.Singleton
 
 @Module
 class NetworkModule {
+
     @Provides
     @Singleton
-    fun provideArtistsApi(client: OkHttpClient): WeatherApi {
+    fun provideHttpClient() = OkHttpClient()
+
+    @Provides
+    @Singleton
+    fun provideWeatherApi(client: OkHttpClient): WeatherApi {
         val retrofit = Retrofit.Builder()
             .client(client)
             .baseUrl(NetworkConfig.API_ENDPOINT_ADDRESS)

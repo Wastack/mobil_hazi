@@ -1,0 +1,112 @@
+swagger: "2.0"
+info:
+  description: "Get current weather by city name"
+  version: "1.0.0"
+  title: "WeatherApp"
+  termsOfService: "https://openweathermap.org/api"
+host: "api.openweathermap.org"
+basePath: "/data/2.5"
+schemes:
+- "http"
+paths:
+  /weather:
+    get:
+      summary: "Get current weather of a city"
+      operationId: "WeatherByCity"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "query"
+        name: "q"
+        type: "string"
+        description: "Status values that need to be considered for filter"
+        required: true
+        default: "Budapest"
+      - in: "query"
+        name: "appid"
+        type: "string"
+        default: "01d73773be37f4a59113bd832c9a2685"
+      responses:
+        200:
+          description: "A weather object"
+          schema:
+            type: "object"
+            properties:
+              coord:
+                type: "object"
+                properties:
+                  lon:
+                    type: "number"
+                  lat:
+                    type: "number"
+              weather:
+                type: "array"
+                items:
+                  type: "object"
+                  properties:
+                    id:
+                      type: "integer"
+                    main:
+                      type: "string"
+                    description:
+                      type: "string"
+                    icon:
+                      type: "string"
+              base:
+                type: "string"
+              main:
+                type: "object"
+                properties:
+                  temp:
+                    type: "number"
+                  pressure:
+                    type: "number"
+                  humidity: 
+                    type: "number"
+                  temp_min: 
+                    type: "number"
+                  temp_max:
+                    type: "number"
+              visibility:
+                type: "number"
+              wind:
+                type: "object"
+                properties:
+                  speed:
+                    type: "number"
+                  deg:
+                    type: "number"
+              clouds:
+                type: "object"
+                properties:
+                  all:
+                    type: "number"
+              dt:
+                type: "number"
+              sys:
+                type: "object"
+                properties:
+                  type:
+                    type: "integer"
+                  id:
+                    type: "integer"
+                  message:
+                    type: number
+                  country:
+                    type: string
+                  sunrise:
+                    type: "number"
+                  sunset:
+                    type: "number"
+              id:
+                type: integer
+              name:
+                type: string
+              cod:
+                type: number
+        400:
+          description: "Invalid status value"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"

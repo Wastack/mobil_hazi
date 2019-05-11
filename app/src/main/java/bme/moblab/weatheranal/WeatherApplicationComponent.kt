@@ -10,6 +10,8 @@ import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
+
+
 @Singleton
 @Component(modules = [UIModule::class, NetworkModule::class, InteractorModule::class])
 interface WeatherApplicationComponent {
